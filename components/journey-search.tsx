@@ -5,10 +5,11 @@ import JourneyResults from "./journey-results";
 import JourneySearchForm from "./journey-search-form";
 import JourneyValues from "./journey-values";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Search() {
   const [isChanging, setIsChanging] = useState(false);
+  const hasMounted = useRef(false);
 
   const searchParams = useSearchParams();
   const searchQuery = searchParams.toString();
@@ -29,6 +30,11 @@ export default function Search() {
   };
 
   useEffect(() => {
+    if (!hasMounted.current) {
+      hasMounted.current = true;
+      return;
+    }
+
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsChanging(false);
   }, [searchQuery]);

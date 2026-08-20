@@ -25,3 +25,19 @@ ESLint and Prettier are setup to maintain clean code.
 To make the application work, we need data in the future.
 In order to make a representable list, I extended the data to an hourly schedule for the three cities, starting from **24-08-2026 to 30-08-2026**.
 In this application, train times generally start at 6:00 and end at 23:00
+
+## Unit tests
+
+To run the unittests tests/format.test.ts and tests/validation.test.ts run:
+
+```bash
+npm test
+```
+
+## Playwright E2E Test
+
+To test the Playwright E2E Test in tests/playwright-e2e.test.tsx run:
+
+```bash
+npm run e2e
+```
