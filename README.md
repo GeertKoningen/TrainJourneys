@@ -23,5 +23,5 @@ ESLint and Prettier are setup to maintain clean code.
 ## Mock Data
 
 To make the application work, we need data in the future.
-In order to make a representable list, I extended the data to an hourly schedule for the three cities, starting from **29-08-2026 to 04-09-2026**.
+In order to make a representable list, I extended the data to an hourly schedule for the three cities, starting from **24-08-2026 to 30-08-2026**.
 In this application, train times generally start at 6:00 and end at 23:00
