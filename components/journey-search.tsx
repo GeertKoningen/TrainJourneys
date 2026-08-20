@@ -1,6 +1,7 @@
 "use client";
 
 import { parseJourneyParameters } from "@/lib/validation";
+import JourneyResults from "./journey-results";
 import JourneySearchForm from "./journey-search-form";
 import JourneyValues from "./journey-values";
 import { useSearchParams } from "next/navigation";
@@ -61,7 +62,7 @@ export default function Search() {
         <JourneySearchForm urlSearchParameters={urlParams} onSubmit={() => setIsChanging(false)} />
       )}
 
-      {currentState === "results" && <p>Results</p>}
+      {currentState === "results" && <JourneyResults searchQuery={searchQuery} />}
     </>
   );
 }
