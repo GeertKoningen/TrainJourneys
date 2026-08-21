@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Search from "@/components/journey-search";
 
 export default function Home() {
@@ -7,7 +8,9 @@ export default function Home() {
         <h1 className="text-2xl font-bold">Train Journey App</h1>
         <p>What is your destination?</p>
 
-        <Search />
+        <Suspense fallback={<div className="my-4">Loading...</div>}>
+          <Search />
+        </Suspense>
       </main>
     </div>
   );

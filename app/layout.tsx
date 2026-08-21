@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html>
+    <html lang="en">
       <head>
         <link rel="icon" type="image/x-icon" href="/app/favicon.ico" />
       </head>
