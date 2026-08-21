@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import QueryProvider from "@/components/query-provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -9,13 +8,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html>
+    <html lang="en">
       <head>
         <link rel="icon" type="image/x-icon" href="/app/favicon.ico" />
       </head>
-      <body>
-        <QueryProvider>{children}</QueryProvider>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
