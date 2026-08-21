@@ -35,7 +35,6 @@ export default function Search() {
       return;
     }
 
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsChanging(false);
   }, [searchQuery]);
 
