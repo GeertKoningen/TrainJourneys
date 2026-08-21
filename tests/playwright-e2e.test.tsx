@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-/* Fix line breaks */
+
 test("user can search for a journey and change the search", async ({ page }) => {
   // Open the page showing the form
   await page.goto("/");

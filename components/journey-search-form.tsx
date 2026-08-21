@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-/* Fix line breaks */
+
 export default function JourneySearchForm({
   urlSearchParameters,
   onSubmit,

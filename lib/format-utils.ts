@@ -1,5 +1,5 @@
 // journeyData stores dates as "DD-MM-YYYY" and times as "H:mm"
-/* Fix line breaks */
+
 export function formatDateDisplay(date: Date): string {
   return new Intl.DateTimeFormat(undefined, {
     dateStyle: "short",

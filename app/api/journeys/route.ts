@@ -1,6 +1,6 @@
 import { searchJourneys } from "@/lib/search-journeys";
 import { parseJourneyParameters } from "@/lib/validation";
-/* Fix line breaks */
+
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);

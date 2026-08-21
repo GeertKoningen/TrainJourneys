@@ -1,5 +1,5 @@
 import { Journey } from "./types";
-/* Fix line breaks */
+
 const API_ENDPOINT = "/api/journeys";
 
 export const getJourneys = async ({

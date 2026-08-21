@@ -6,7 +6,7 @@ import JourneySearchForm from "./journey-search-form";
 import JourneyValues from "./journey-values";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-/* Fix line breaks */
+
 export default function Search() {
   const [isChanging, setIsChanging] = useState(false);
   const hasMounted = useRef(false);

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-/* Fix line breaks */
+
 export const metadata: Metadata = {
   title: "Train Journey",
   description: "What is your destination?",
