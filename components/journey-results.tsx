@@ -4,7 +4,7 @@ import { ApiError, getJourneys } from "@/lib/journey-service";
 import { Journey } from "@/lib/types";
 import { formatTime, formatPrice, formatDuration } from "@/lib/format-utils";
 import { parseJourneyParameters } from "@/lib/validation";
-
+/* Fix line breaks */
 type Props = {
   searchQuery: string;
 };

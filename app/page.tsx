@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import Search from "@/components/journey-search";
-
+/* Fix line breaks */
 export default function Home() {
   return (
     <div className="mx-auto max-w-200">

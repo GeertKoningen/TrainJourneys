@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+/* Fix line breaks */
 :root {
   --color-background: #f2f9fa;
   --color-textcolor: #3b044d;

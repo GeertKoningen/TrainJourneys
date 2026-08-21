@@ -1,7 +1,7 @@
 import type { JourneyParameters, Journeys } from "./types";
 import { journeyData } from "./journey-data";
 import { formatDateFilter, createDate } from "./format-utils";
-
+/* Fix line breaks */
 type SearchJourneys = (parameters: JourneyParameters) => Promise<Journeys>;
 
 export const searchJourneys: SearchJourneys = async ({ origin, destination, date }) => {
