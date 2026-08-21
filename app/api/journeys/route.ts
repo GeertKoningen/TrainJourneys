@@ -20,7 +20,7 @@ export async function GET(request: Request) {
     }
 
     return new Response(JSON.stringify(results));
-  } catch (error) {
+  } catch {
     return new Response(JSON.stringify({ error: "Invalid journey request." }), { status: 400 });
   }
 }

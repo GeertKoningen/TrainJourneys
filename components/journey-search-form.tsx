@@ -15,11 +15,19 @@ export default function JourneySearchForm({
   const date = urlSearchParameters?.get("date") || "";
   const nrOfPassengers = urlSearchParameters?.get("nrOfPassengers") || "";
 
+  // Get URLSearchParams by form
+  const getSearchParams = (form: HTMLFormElement) => {
+    const formData = new FormData(form);
+    const formArray = Array.from(formData.entries()).map(([key, value]) => [key, String(value)]);
+    return new URLSearchParams(formArray);
+  };
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const formData = new FormData(event.currentTarget);
-    const searchParams = new URLSearchParams(formData as any);
+    const searchParams = getSearchParams(event.currentTarget);
+
+    // Set title, for the history of the browser.
     document.title = `Train journey ${searchParams.get("origin")} to ${searchParams.get("destination")} on ${searchParams.get("date")} for ${searchParams.get("nrOfPassengers")} passengers`;
     router.push(`/?${searchParams.toString()}`);
 
