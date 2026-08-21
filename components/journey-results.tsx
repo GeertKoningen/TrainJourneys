@@ -4,8 +4,6 @@ import { ApiError, getJourneys } from "@/lib/journey-service";
 import { Journey } from "@/lib/types";
 import { formatTime, formatPrice, formatDuration } from "@/lib/format-utils";
 import { parseJourneyParameters } from "@/lib/validation";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
 
 type Props = {
   searchQuery: string;
@@ -35,6 +33,7 @@ export default function JourneyResults({ searchQuery }: Props) {
   return (
     journeyParameters && (
       <table>
+        <caption className="sr-only">Train journey search results</caption>
         <thead>
           <tr>
             <th>Departure & arrival</th>
@@ -47,7 +46,9 @@ export default function JourneyResults({ searchQuery }: Props) {
           {isLoading && <ResultsLoadingMultipleRows passengers={passengers} />}
           {!isLoading && (isError || items.length === 0) && (
             <tr>
-              <td colSpan={passengers > 1 ? 4 : 3}>No results found.</td>
+              <td aria-live="polite" colSpan={passengers > 1 ? 4 : 3}>
+                No results found.
+              </td>
             </tr>
           )}
           {items.map((item, index) => (
@@ -88,19 +89,25 @@ function ResultsLoadingRow({ passengers }: { passengers: number }) {
   return (
     <tr>
       <td>
-        <Skeleton width={100} />
+        <Skeleton widthClassName="w-[100px]" />
       </td>
       <td>
-        <Skeleton width={50} />
+        <Skeleton widthClassName="w-[50px]" />
       </td>
       <td>
-        <Skeleton width={70} />
+        <Skeleton widthClassName="w-[70px]" />
       </td>
       {passengers > 1 && (
         <td>
-          <Skeleton width={70} />
+          <Skeleton widthClassName="w-[70px]" />
         </td>
       )}
     </tr>
+  );
+}
+
+function Skeleton({ widthClassName }: { widthClassName: string }) {
+  return (
+    <span className={`inline-block h-5 ${widthClassName} animate-pulse rounded bg-textcolor/20`} />
   );
 }

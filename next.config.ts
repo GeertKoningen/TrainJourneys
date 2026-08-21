@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   productionBrowserSourceMaps: true,
   experimental: {
     turbopackMinify: true,
+    inlineCss: true,
   },
 };
 
