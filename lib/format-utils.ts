@@ -1,7 +1,7 @@
 // journeyData stores dates as "DD-MM-YYYY" and times as "H:mm"
 
-export function formatDateDisplay(date: Date): string {
-  return new Intl.DateTimeFormat(undefined, {
+export function formatDateDisplay(date: Date, locale?: Intl.LocalesArgument): string {
+  return new Intl.DateTimeFormat(locale, {
     dateStyle: "short",
   }).format(date);
 }
@@ -32,8 +32,12 @@ export function createDate(date: string, time: string): Date {
   return new Date(year, month - 1, day, hours, minutes);
 }
 
-export function formatPrice(value: number, currency: string): string {
-  return new Intl.NumberFormat(undefined, {
+export function formatPrice(
+  value: number,
+  currency: string,
+  locale?: Intl.LocalesArgument
+): string {
+  return new Intl.NumberFormat(locale, {
     style: "currency",
     currency,
   }).format(value);

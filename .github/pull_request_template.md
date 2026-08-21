@@ -1,56 +1,16 @@
-\# Description
+# Train Journeys Pull Request
 
+## Summary
 
+<!-- What problem does this PR solve? Keep this to a few sentences. -->
 
-\## What's changed?
+## Checklist
 
+- [ ] Unittests are up to date
+- [ ] Responsive layout
+- [ ] Accessibility checked
+- [ ] Documentation was updated when needed
 
+## Screenshots
 
-<!-- Describe the changes you made -->
-
-
-
-\---
-
-
-
-\## Checklist
-
-
-
-\### Codequality
-
-\- \[ ] Unit tests added or updated
-
-\- \[ ] ESLint successful
-
-
-
-\### Qualitycheck
-
-\- \[ ] Responsive
-
-\- \[ ] Lighthouse
-
-\- \[ ] Accessibility
-
-
-
-\### Other
-
-\- \[ ] No console errors
-
-\- \[ ] No unused code
-
-
-
-\---
-
-
-
-\## Screenshots
-
-
-
-<!-- Add screenshots if relevant -->
-
+<!-- Add screenshots if relevant. -->
