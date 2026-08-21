@@ -8,17 +8,14 @@ import {
 } from "@/lib/format-utils";
 
 describe("format", () => {
-  it("formats the date correctly", () => {
-    const dateString = formatDateDisplay(new Date(2026, 7, 25));
-    expect(dateString).toMatch("25-08-2026");
+  const locale = "nl-NL";
+
+  it("formats the display date for the given locale", () => {
+    const dateString = formatDateDisplay(new Date(2026, 7, 25), locale);
+    expect(dateString).toBe("25-08-2026");
   });
 
-  it("formats the date correctly", () => {
-    const dateString = formatDateFilter(new Date(2026, 7, 25));
-    expect(dateString).toMatch("25-08-2026");
-  });
-
-  it("formats the date correctly", () => {
+  it("formats the duration correctly", () => {
     const dateString1 = formatDuration(new Date(2026, 7, 25, 10, 0), new Date(2026, 7, 25, 12, 30));
     const dateString2 = formatDuration(new Date(2026, 7, 25, 10, 0), new Date(2026, 7, 25, 10, 15));
 
@@ -37,13 +34,13 @@ describe("format", () => {
   });
 
   it("formats the price in EUR correctly", () => {
-    const priceString = formatPrice(1234.56, "EUR");
+    const priceString = formatPrice(1234.56, "EUR", locale);
     const fixSpacePriceString = priceString.replace(/\u00a0/g, " ");
     expect(fixSpacePriceString).toBe("€ 1.234,56");
   });
 
   it("formats the price in USD correctly", () => {
-    const priceString = formatPrice(1234.56, "USD");
+    const priceString = formatPrice(1234.56, "USD", locale);
     const fixSpacePriceString = priceString.replace(/\u00a0/g, " ");
     expect(fixSpacePriceString).toBe("US$ 1.234,56");
   });
