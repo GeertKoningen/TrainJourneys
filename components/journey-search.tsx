@@ -1,5 +1,5 @@
 "use client";
-
+import QueryProvider from "./query-provider";
 import { parseJourneyParameters } from "@/lib/validation";
 import JourneyResults from "./journey-results";
 import JourneySearchForm from "./journey-search-form";
@@ -68,7 +68,11 @@ export default function Search() {
         <JourneySearchForm urlSearchParameters={urlParams} onSubmit={() => setIsChanging(false)} />
       )}
 
-      {currentState === "results" && <JourneyResults searchQuery={searchQuery} />}
+      {currentState === "results" && (
+        <QueryProvider>
+          <JourneyResults searchQuery={searchQuery} />
+        </QueryProvider>
+      )}
     </>
   );
 }
